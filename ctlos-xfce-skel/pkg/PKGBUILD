@@ -6,7 +6,7 @@ pkgdesc='Settings xfce'
 pkgver=1.9.0
 pkgrel=1
 arch=('any')
-url="https://github.com/ctlos/ctlos-xfce-skel"
+url="https://github.com/ctlos/ctlos-skel"
 license=('GPL')
 depends=(
          git
