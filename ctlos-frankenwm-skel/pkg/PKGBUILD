@@ -1,5 +1,6 @@
 # Maintainer: Alex Creio <ctlos@protonmail.com>
 
+srcname=ctlos-skel
 pkgname=ctlos-frankenwm-skel
 _pkgname=frankenwm
 pkgver=1.1.0
@@ -53,7 +54,7 @@ install=README.install
 source=("git+$url.git")
 
 prepare() {
-  cd "$srcdir/$pkgname/franken"
+  cd ${srcdir}/${srcname}/${pkgname}/franken
 
   if [ -e $startdir/config.h ]; then
     msg "using custom config.h"
@@ -64,12 +65,12 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/$pkgname/franken"
+  cd ${srcdir}/${srcname}/${pkgname}/franken
   make
 }
 
 package() {
-  cd "$srcdir/$pkgname"
+  cd ${srcdir}/${srcname}/${pkgname}
   mkdir -p "${pkgdir}/usr/bin"
   mkdir -p "${pkgdir}/usr/bin-$_pkgname"
   mkdir -p "${pkgdir}/etc/skel"
@@ -82,7 +83,7 @@ package() {
   cp -rf etc/sddm.conf "${pkgdir}/etc/sddm-$_pkgname.conf"
   cp -rf usr/share/xsessions/$_pkgname.desktop "${pkgdir}/usr/share/xsessions/$_pkgname.desktop"
 
-  cd "$srcdir/$pkgname/franken"
+  cd ${srcdir}/${srcname}/${pkgname}/franken
   make PREFIX=/usr DESTDIR="${pkgdir}" install
 
   install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"

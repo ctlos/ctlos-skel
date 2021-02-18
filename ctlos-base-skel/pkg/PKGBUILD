@@ -1,5 +1,6 @@
 # Maintainer: Alex Creio <ctlos@protonmail.com>
 
+srcname=ctlos-skel
 pkgname=ctlos-base-skel
 pkgdesc='Settings base'
 pkgver=1.8.0
@@ -13,7 +14,7 @@ source=("git+$url.git")
 sha256sums=('SKIP')
 
 package() {
-  cd ${srcdir}/${pkgname}
+  cd ${srcdir}/${srcname}/${pkgname}
   install -d $pkgdir/etc
   cp -rf etc/. $pkgdir/etc
 

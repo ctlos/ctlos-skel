@@ -1,5 +1,6 @@
 # Maintainer: Alex Creio <ctlos@protonmail.com>
 
+srcname=ctlos-skel
 pkgname=ctlos-openbox-skel
 pkgdesc='Settings Openbox'
 pkgver=2.5.0
@@ -55,7 +56,7 @@ sha256sums=('SKIP')
 install=README.install
 
 package() {
-  cd "${srcdir}/${pkgname}"
+  cd ${srcdir}/${srcname}/${pkgname}
   mkdir -p "${pkgdir}/etc/skel"
   mkdir -p "${pkgdir}/etc/skel-ob"
 

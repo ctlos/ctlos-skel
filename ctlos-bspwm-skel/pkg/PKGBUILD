@@ -1,5 +1,6 @@
 # Maintainer: Alex Creio <ctlos@protonmail.com>
 
+srcname=ctlos-skel
 pkgname=ctlos-bspwm-skel
 pkgdesc='Settings Bspwm'
 pkgver=1.8.0
@@ -54,7 +55,7 @@ sha256sums=('SKIP')
 install=README.install
 
 package() {
-  cd ${srcdir}/${pkgname}
+  cd ${srcdir}/${srcname}/${pkgname}
   mkdir -p "${pkgdir}/usr/bin"
   mkdir -p "${pkgdir}/usr/bin-bspwm"
   mkdir -p "${pkgdir}/etc/skel"
