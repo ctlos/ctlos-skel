@@ -79,6 +79,7 @@
         <value type="string" value="pamac-tray"/>
         <value type="string" value="апплет networkmanager"/>
       </property>
+      <property name="icon-size" type="int" value="0"/>
     </property>
     <property name="plugin-4" type="string" value="whiskermenu"/>
     <property name="plugin-7" type="string" value="pulseaudio">
