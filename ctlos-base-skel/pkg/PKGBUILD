@@ -9,7 +9,7 @@ arch=('any')
 url="https://github.com/ctlos/ctlos-skel"
 license=('GPL')
 groups=('ctlos')
-depends=('git')
+makedepends=('git')
 source=("git+$url.git")
 sha256sums=('SKIP')
 
