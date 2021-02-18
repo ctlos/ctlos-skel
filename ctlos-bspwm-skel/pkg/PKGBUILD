@@ -1,0 +1,66 @@
+# Maintainer: Alex Creio <ctlos@protonmail.com>
+
+pkgname=ctlos-bspwm-skel
+pkgdesc='Settings Bspwm'
+pkgver=1.8.0
+pkgrel=1
+arch=('any')
+url="https://github.com/ctlos/ctlos-skel"
+license=('GPL')
+depends=(
+         git
+         polkit-gnome
+         galculator
+         network-manager-applet
+         bspwm
+         sxhkd
+         picom
+         redshift
+         dunst
+         xfce4-power-manager
+         xsettingsd
+         udisks2
+         udiskie
+         ueberzug
+         gsimplecal
+         jgmenu
+         lxmenu-data
+         lxappearance
+         lxrandr
+         nitrogen
+         thunar
+         thunar-archive-plugin
+         thunar-media-tags-plugin
+         thunar-volman
+         tumbler
+         flameshot
+         leafpad
+         pavucontrol
+         viewnior
+         xreader
+         parcellite
+         wmname
+         micro-bin
+         skippy-xd-git
+         multilockscreen-git
+         tint2-git
+         polybar-git
+         jsoncpp
+         rxvt-unicode
+         urxvt-perls
+)
+source=("git+$url.git")
+sha256sums=('SKIP')
+install=README.install
+
+package() {
+  cd ${srcdir}/${pkgname}
+  mkdir -p "${pkgdir}/usr/bin"
+  mkdir -p "${pkgdir}/usr/bin-bspwm"
+  mkdir -p "${pkgdir}/etc/skel"
+  mkdir -p "${pkgdir}/etc/skel-bspwm"
+
+  cp -rf usr/bin/. "${pkgdir}/usr/bin-bspwm"
+  cp -rf etc/skel/. "$pkgdir/etc/skel-bspwm"
+  cp -rf etc/sddm.conf "${pkgdir}/etc/sddm-bspwm.conf"
+}

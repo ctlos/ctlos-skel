@@ -1,0 +1,64 @@
+# Maintainer: Alex Creio <ctlos@protonmail.com>
+
+pkgname=ctlos-xfce-skel
+pkgdesc='Settings xfce'
+pkgver=1.9.0
+pkgrel=1
+arch=('any')
+url="https://github.com/ctlos/ctlos-xfce-skel"
+license=('GPL')
+depends=(
+         git
+         polkit-gnome
+         alacarte
+         catfish
+         galculator
+         gnome-multi-writer
+         network-manager-applet
+         xfce4-appfinder
+         xfce4-battery-plugin
+         xfce4-notifyd
+         xfce4-panel
+         xfce4-power-manager
+         xfce4-pulseaudio-plugin
+         xfce4-session
+         xfce4-settings
+         xfce4-terminal
+         xfce4-whiskermenu-plugin
+         xfce4-xkb-plugin
+         xfce4-mpc-plugin
+         xfce4-clipman-plugin
+         xfce4-netload-plugin
+         xfconf
+         xfdesktop
+         xfsprogs
+         xfwm4
+         thunar
+         thunar-archive-plugin
+         thunar-media-tags-plugin
+         thunar-volman
+         tumbler
+         file-roller
+         flameshot
+         leafpad
+         pavucontrol
+         viewnior
+         djvulibre
+         xreader
+         xfce4-windowck-plugin
+         skippy-xd-git
+         multilockscreen-git
+         xfce4-docklike-plugin-git
+)
+source=("git+$url.git")
+sha256sums=('SKIP')
+install=README.install
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  mkdir -p "${pkgdir}/etc/skel"
+  mkdir -p "${pkgdir}/etc/skel-xfce"
+
+  cp -rf etc/skel/. "$pkgdir/etc/skel-xfce"
+  cp -rf etc/sddm.conf "${pkgdir}/etc/sddm-xfce.conf"
+}

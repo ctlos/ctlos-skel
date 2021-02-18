@@ -1,0 +1,64 @@
+# Maintainer: Alex Creio <ctlos@protonmail.com>
+
+pkgname=ctlos-openbox-skel
+pkgdesc='Settings Openbox'
+pkgver=2.5.0
+pkgrel=1
+arch=('any')
+url="https://github.com/ctlos/ctlos-openbox-skel"
+license=('GPL')
+makedepends=('git')
+depends=(
+         polkit-gnome
+         network-manager-applet
+         galculator
+         gxkb
+         gsimplecal
+         jgmenu
+         lxmenu-data
+         lxappearance
+         nitrogen
+         obconf
+         lxrandr
+         thunar
+         thunar-archive-plugin
+         thunar-media-tags-plugin
+         thunar-volman
+         tumbler
+         xfce4-power-manager
+         xfce4-terminal
+         file-roller
+         flameshot
+         leafpad
+         pavucontrol
+         viewnior
+         xreader
+         djvulibre
+         parcellite
+         picom
+         redshift
+         dunst
+         xsettingsd
+         udisks2
+         udiskie
+         volumeicon
+         alttab-git
+         obkey-git
+         skippy-xd-git
+         tint2-git
+         jsoncpp
+         polybar-git
+         multilockscreen-git
+)
+source=("git+$url.git")
+sha256sums=('SKIP')
+install=README.install
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  mkdir -p "${pkgdir}/etc/skel"
+  mkdir -p "${pkgdir}/etc/skel-ob"
+
+  cp -rf etc/skel/. "$pkgdir/etc/skel-ob"
+  cp -rf etc/sddm.conf "${pkgdir}/etc/sddm-ob.conf"
+}
