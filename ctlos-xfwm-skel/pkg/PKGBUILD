@@ -3,7 +3,7 @@
 srcname=ctlos-skel
 pkgname=ctlos-xfwm-skel
 pkgdesc='Settings xfwm'
-pkgver=1.3.3
+pkgver=1.3.4
 pkgrel=1
 arch=('any')
 url="https://github.com/ctlos/ctlos-skel"
@@ -39,6 +39,7 @@ depends=(
          wmname
          micro-bin
          multilockscreen-git
+         tint2-git
          polybar-git
          jsoncpp
          rxvt-unicode-patched
