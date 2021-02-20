@@ -67,7 +67,7 @@ font-3 = "Hack Nerd Font:antialias=false:pixelsize=9;2"
 
 modules-left = app web term rss cpu memory uparch mpd
 modules-center = i3
-modules-right = tor alsa date xkeyboard off
+modules-right = tor alsa date xkeyboard power
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -156,7 +156,7 @@ label-unmounted-foreground = ${colors.red}
 
 [module/wtr]
 type = custom/script
-exec = ~/.config/polybar/wtr.sh
+exec = ~/.config/i3/polybar/wtr.sh
 format-foreground = ${colors.magenta}
 # format-padding = 1
 interval = 600
@@ -166,7 +166,7 @@ label-font = 0
 
 [module/uparch]
 type = custom/script
-exec = ~/.config/polybar/uparch.sh
+exec = ~/.config/i3/polybar/uparch.sh
 interval = 600
 format-prefix = " "
 format-prefix-foreground = ${colors.red}
@@ -188,7 +188,7 @@ exec-if = ping -c 1 ya.ru
 
 [module/tor]
 type = custom/script
-exec = ~/.config/polybar/status tor
+exec = ~/.config/i3/polybar/status tor
 interval = 6
 format = <label>
 # format-padding = 1
@@ -205,24 +205,10 @@ label-maxlen = 20
 
 
 
-[module/mail]
-type = custom/script
-; 600s = 10min
-# interval = 600
-# format = " <label> "
-# format-prefix = " "
-tail = true
-format-prefix-foreground = ${colors.primary}
-exec = "~/.config/polybar/gmail/launch.py --prefix ' ' --color '#88C0D0' --nosound"
-click-left = xdg-open https://mail.google.com
-
-
-
 [module/term]
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-# click-left = "urxvtc -geometry 190x50 -name 'tmux' -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
 click-left = xfce4-terminal &
 click-right = xfce4-terminal -e htop &
 
@@ -232,10 +218,7 @@ click-right = xfce4-terminal -e htop &
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-#click-left = ulauncher
-click-left = "jgmenu_run >/dev/null 2>&1 &"
-# click-right = ~/.bin/rofi-favapp
-click-right = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
+click-left = rofi -modi run,drun -show drun -location 1 -xoffset 15 -yoffset 39 -line-padding 4 -columns 1 -width 25 -lines 10 -padding 15 -hide-scrollbar -show-icons -drun-icon-theme
 
 
 
@@ -244,7 +227,7 @@ type = custom/text
 content = 
 content-foreground = ${colors.primary}
 click-left = xfce4-terminal -e newsboat &
-click-right = 
+click-right =
 
 
 
@@ -253,7 +236,7 @@ type = custom/text
 content = 
 content-foreground = ${colors.primary}
 click-left = ~/.bin/findapp firefox &
-click-right = 
+click-right =
 
 
 
@@ -314,11 +297,11 @@ label = %layout%
 
 
 
-[module/off]
+[module/power]
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-click-left = ~/.bin/i3-logout
+click-left = ~/.config/i3/power
 
 
 
@@ -368,38 +351,6 @@ icon-next-foreground = ${colors.primary}
 
 
 
-[module/ewmh]
-type = internal/xworkspaces
-pin-workspaces = true
-enable-click = true
-enable-scroll = true
-# icon-default = ♟
-format = <label-state>
-# format-padding = 5
-label-monitor = %name%
-# tokens: %index% %icon% %name%
-label-active = %name%
-label-active-padding = 4
-label-active-foreground = ${colors.dark}
-label-active-background = ${colors.accent}
-
-label-occupied = %name%
-label-occupied-foreground = ${colors.foreground}
-label-occupied-background = ${colors.magenta}
-label-occupied-padding = 4
-
-label-urgent = %name%
-label-urgent-padding = 4
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-
-label-empty = %name%
-label-empty-padding = 4
-label-empty-foreground = ${colors.foreground}
-label-empty-background = ${colors.background}
-
-
-
 [module/date]
 type = internal/date
 interval = 1
@@ -410,7 +361,7 @@ time-alt = "%H:%M:%S"
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 # format-underline = #5294E2
-label =%{A3:gsimplecal & disown:}%date% %time%%{A} %{A}
+label =%{A3:gsimplecal & disown:}%date% %time%%{A}
 # label = %date% %time%
 # format-background = #132332
 # label-foreground = ${colors.white}

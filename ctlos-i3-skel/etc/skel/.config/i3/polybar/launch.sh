@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 # Terminate already running bar instances
 killall -q polybar
@@ -9,10 +9,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch bar1 and bar2
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar -c $HOME/.config/polybar/i3cfg --reload top &
+    MONITOR=$m polybar -c $HOME/.config/i3/polybar/config --reload top &
   done
 else
-  polybar -c $HOME/.config/polybar/i3cfg --reload top &
+  polybar -c $HOME/.config/i3/polybar/config --reload top &
 fi
 
 # polybar top &

@@ -3,20 +3,18 @@
 srcname=ctlos-skel
 pkgname=ctlos-i3-skel
 pkgdesc='Settings I3 wm'
-pkgver=1.3.0
+pkgver=1.3.1
 pkgrel=1
 arch=('any')
 url="https://github.com/ctlos/ctlos-skel"
 license=('GPL')
+makedepends=('git')
 depends=(
-         git
          polkit-gnome
          network-manager-applet
          i3-gaps
          galculator
          gsimplecal
-         jgmenu
-         lxmenu-data
          lxappearance
          nitrogen
          lxrandr
@@ -43,7 +41,6 @@ depends=(
          udiskie
          skippy-xd-git
          multilockscreen-git
-         tint2-git
          polybar-git
          jsoncpp
 )

@@ -7,7 +7,7 @@ setxkbmap -layout us,ru -option "grp:alt_shift_toggle,grp_led:scroll" &
 picom -b --config $HOME/.config/picom.conf &
 # hsetroot -fill /usr/share/wall/ctld.png &
 run nitrogen --restore &
-run sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+run sxhkd -c $HOME/.config/bspwm/sxhkd/sxhkdrc &
 if [ "$(which polybar)" != "polybar not found" ]; then
   $HOME/.config/bspwm/polybar/launch.sh &
   # (sleep 2; sh ~/.bin/phide.sh) &
@@ -24,7 +24,6 @@ gnome-keyring-daemon --start --components=pkcs11 &
 
 # greenclip daemon &
 
-run jgmenu_run start &
 run nm-applet &
 # run redshift-gtk &
 run xfce4-power-manager &

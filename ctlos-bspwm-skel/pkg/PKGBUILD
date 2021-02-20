@@ -3,13 +3,13 @@
 srcname=ctlos-skel
 pkgname=ctlos-bspwm-skel
 pkgdesc='Settings Bspwm'
-pkgver=1.8.1
+pkgver=1.8.2
 pkgrel=1
 arch=('any')
 url="https://github.com/ctlos/ctlos-skel"
 license=('GPL')
+makedepends=('git')
 depends=(
-         git
          polkit-gnome
          galculator
          network-manager-applet
@@ -24,8 +24,6 @@ depends=(
          udiskie
          ueberzug
          gsimplecal
-         jgmenu
-         lxmenu-data
          lxappearance
          lxrandr
          nitrogen

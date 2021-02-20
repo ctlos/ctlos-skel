@@ -3,7 +3,7 @@
 srcname=ctlos-skel
 pkgname=ctlos-openbox-skel
 pkgdesc='Settings Openbox'
-pkgver=2.5.2
+pkgver=2.5.3
 pkgrel=1
 arch=('any')
 url="https://github.com/ctlos/ctlos-skel"

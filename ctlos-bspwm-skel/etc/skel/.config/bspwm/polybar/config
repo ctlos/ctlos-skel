@@ -149,9 +149,6 @@ content-foreground = ${xrdb:color7}
 content-background = ${colors.accent}
 content-padding = 3
 click-left = rofi -show drun
-click-right = "jgmenu_run >/dev/null 2>&1 &"
-# click-right = ~/.bin/rofi-favapp
-# click-right = mylaunchpad xfce-applications
 
 
 
@@ -244,7 +241,7 @@ time-alt = "%H:%M:%S"
 format-prefix = " "
 format-prefix-foreground = ${colors.accent}
 # format-underline = #5294E2
-label =%{A3:gsimplecal & disown:}%date% %time%%{A} %{A}
+label =%{A3:gsimplecal & disown:}%date% %time%%{A}
 # label = %date% %time%
 # format-background = #132332
 label-foreground = ${colors.text}

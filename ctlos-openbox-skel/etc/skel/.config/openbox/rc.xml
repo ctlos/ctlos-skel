@@ -40,7 +40,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>dui</name>
+    <name>xui</name>
     <cornerRadius>4</cornerRadius>
     <cornerRadius menu="yes">4</cornerRadius>
     <titleLayout>SLIMC</titleLayout>
@@ -364,7 +364,7 @@
     </keybind>
     <keybind key="A-s">
       <action name="Execute">
-        <command>mousepad</command>
+        <command>leafpad</command>
       </action>
     </keybind>
     <keybind key="A-t">

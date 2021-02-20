@@ -3,7 +3,7 @@
 wmname LG3D &
 
 tint2 -c ~/.config/tint2/tray.tint2rc &
-~/.config/polybar/frankenwm/launch.sh &
+~/.config/frankenwm/polybar/launch.sh &
 sxhkd -c $HOME/.config/frankenwm/sxhkdrc &
 xsetroot -cursor_name left_ptr &
 nitrogen --restore &
@@ -20,3 +20,4 @@ unclutter &
 parcellite &
 nm-applet &
 xfce4-power-manager &
+udiskie -t &

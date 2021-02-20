@@ -236,7 +236,7 @@ bindsym $mod1+r exec --no-startup-id "xfce4-terminal --title float -e ranger"
 bindsym $mod1+h exec --no-startup-id "xfce4-terminal --title float -e htop"
 bindsym $mod1+f exec --no-startup-id "$HOME/.bin/findapp thunar"
 # bindsym $mod1+s exec --no-startup-id "subl3"
-bindsym $mod1+e exec --no-startup-id "mousepad"
+bindsym $mod1+e exec --no-startup-id "leafpad"
 bindsym $mod1+w exec --no-startup-id "firefox"
 bindsym $mod+w exec --no-startup-id "$HOME/.bin/i3_switch_workspace.sh"
 bindsym Print exec --no-startup-id "$HOME/.bin/flameshot.sh -c"
@@ -254,11 +254,8 @@ bindsym $mod+Ctrl+d exec mpc del 0
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
 exec_always --no-startup-id "xsetroot -cursor_name left_ptr"
 exec_always --no-startup-id "nitrogen --restore"
-# gifsicle --resize 1366x768 wl7.gif -o bg.gif
-# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID ~/.wall/bg.gif -a"
-# exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -wid WID --keepaspect=no --loop ~/.wall/wl7.gif"
 
-exec --no-startup-id "numlockx"
+# exec --no-startup-id "numlockx"
 exec --no-startup-id "picom -b --config ~/.config/picom.conf"
 #exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:win_space_toggle,grp_led:scroll'"
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle,grp_led:scroll'"
@@ -269,13 +266,11 @@ exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 
 ##### Start bar
-exec_always --no-startup-id "$HOME/.config/polybar/i3cfg.sh"
-# exec_always --no-startup-id tint2
+exec_always --no-startup-id "$HOME/.config/i3/polybar/launch.sh"
 
 exec_always --no-startup-id "dunst -config $HOME/.config/dunst/dunstrc"
-exec_always --no-startup-id "jgmenu_run start"
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift-gtk
+# exec --no-startup-id redshift-gtk
 exec --no-startup-id parcellite
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id "udiskie -t"
