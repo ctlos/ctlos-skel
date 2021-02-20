@@ -18,4 +18,5 @@ xfce4-power-manager &
 dunst &
 unclutter &
 parcellite &
+udiskie -t &
 (sleep 4; $HOME/.config/xfwm/polybar/launch.sh) &
