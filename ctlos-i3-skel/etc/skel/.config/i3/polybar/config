@@ -301,7 +301,7 @@ label = %layout%
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-click-left = ~/.config/i3/power
+click-left = ~/.config/i3/polybar/power
 
 
 
