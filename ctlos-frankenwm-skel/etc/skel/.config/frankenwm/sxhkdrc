@@ -4,7 +4,7 @@
 
 # show help on key bindings
 super + F1
-  urxvt -name Float -e $HOME/.config/xfwm/show_keys
+  urxvt -name Float -e $HOME/.config/frankenwm/show_keys
 
 # program launcher rofi
 alt + d
@@ -17,10 +17,6 @@ alt + space
 # terminal emulator slop
 alt + Return
   sh -c "$HOME/.bin/draw"
-
-# terminal emulator
-super + t
-  urxvt
 
 # terminal emulator findapp
 alt + t
@@ -50,16 +46,16 @@ alt + r
 #   rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 # polybar toggle
-super + p
+alt + p
   sh -c "polybar-msg cmd toggle"
 
 # multilock.sh
-super + l
+alt + l
   sh -c "$HOME/.bin/multilock.sh -l blur"
 
 # power menu rofi
 super + alt + Delete
-  sh -c "$HOME/.config/xfwm/polybar/power"
+  sh -c "$HOME/.config/frankenwm/polybar/power"
 
 # flameshot full save ~/Pictures
 Print

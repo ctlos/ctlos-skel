@@ -139,7 +139,7 @@ static key keys[] = {
 
     /* spawn terminal, dmenu, w/e you want to */
     {  MOD4|SHIFT,       XK_Return,     spawn,             {.com = termcmd}},
-    {  MOD4,             XK_r,          spawn,             {.com = menucmd}},
+    /* {  MOD4,             XK_r,          spawn,             {.com = menucmd}}, */
     /* kill current window */
     {  MOD4,             XK_q,          killclient,        {NULL}},
 

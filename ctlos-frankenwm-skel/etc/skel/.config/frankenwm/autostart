@@ -3,7 +3,8 @@
 wmname LG3D &
 
 tint2 -c ~/.config/tint2/tray.tint2rc &
-~/.config/polybar/launch.sh &
+~/.config/polybar/frankenwm/launch.sh &
+sxhkd -c $HOME/.config/frankenwm/sxhkdrc &
 xsetroot -cursor_name left_ptr &
 nitrogen --restore &
 picom -b --config ~/.config/picom.conf &
@@ -16,3 +17,6 @@ xsettingsd &
 gnome-keyring-daemon --start --components=pkcs11,secrets &
 dunst &
 unclutter &
+parcellite &
+nm-applet &
+xfce4-power-manager &
