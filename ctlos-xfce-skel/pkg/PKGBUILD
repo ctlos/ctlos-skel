@@ -3,13 +3,13 @@
 srcname=ctlos-skel
 pkgname=ctlos-xfce-skel
 pkgdesc='Settings xfce'
-pkgver=1.9.1
+pkgver=1.9.2
 pkgrel=1
 arch=('any')
 url="https://github.com/ctlos/ctlos-skel"
 license=('GPL')
+makedepends=('git')
 depends=(
-         git
          polkit-gnome
          alacarte
          catfish
